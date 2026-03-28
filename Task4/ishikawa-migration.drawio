@@ -1,0 +1,76 @@
+<mxfile host="app.diagrams.net" modified="2026-03-28T00:00:00.000Z" agent="architecture-medikamente" version="22.0.0" type="device">
+  <diagram name="Ishikawa-Migration" id="ishikawa">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="head" value="Риск деградации производительности, надёжности и качества данных при миграции на новую архитектуру и росте нагрузки" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="720" y="360" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="spine" style="endArrow=classic;html=1;rounded=0;strokeWidth=3;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="410" as="sourcePoint" />
+            <mxPoint x="720" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b1" style="endArrow=none;html=1;rounded=0;strokeWidth=2;strokeColor=#82b366;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="410" as="sourcePoint" />
+            <mxPoint x="120" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l1" value="&lt;b&gt;Инфраструктура&lt;/b&gt;&lt;br&gt;мало мощности; нет HA; нет гориз. масштаба" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="20" y="40" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" style="endArrow=none;html=1;rounded=0;strokeWidth=2;strokeColor=#82b366;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="410" as="sourcePoint" />
+            <mxPoint x="240" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l2" value="&lt;b&gt;Архитектура и код&lt;/b&gt;&lt;br&gt;монолитные связи; нет SoT; нет lineage" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="200" y="50" width="210" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" style="endArrow=none;html=1;rounded=0;strokeWidth=2;strokeColor=#82b366;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="410" as="sourcePoint" />
+            <mxPoint x="360" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l3" value="&lt;b&gt;Данные и интеграции&lt;/b&gt;&lt;br&gt;дубли Excel+1С; нет API; нет классификации" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" style="endArrow=none;html=1;rounded=0;strokeWidth=2;strokeColor=#6c8ebf;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="410" as="sourcePoint" />
+            <mxPoint x="160" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4" value="&lt;b&gt;Процессы разработки и релизов&lt;/b&gt;&lt;br&gt;ручные операции; мало тестов; слабый мониторинг" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="20" y="640" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" style="endArrow=none;html=1;rounded=0;strokeWidth=2;strokeColor=#6c8ebf;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="410" as="sourcePoint" />
+            <mxPoint x="320" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l5" value="&lt;b&gt;Люди и компетенции&lt;/b&gt;&lt;br&gt;мало опыта DWH/K8s; нет команды миграции" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="660" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" style="endArrow=none;html=1;rounded=0;strokeWidth=2;strokeColor=#6c8ebf;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="410" as="sourcePoint" />
+            <mxPoint x="480" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l6" value="&lt;b&gt;Управление&lt;/b&gt;&lt;br&gt;нет единого roadmap; размытые зоны ответственности" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="560" y="650" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="title" value="Диаграмма Исикавы: риски миграции «Медикаменте»" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="450" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
