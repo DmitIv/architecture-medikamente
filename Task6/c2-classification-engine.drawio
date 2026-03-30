@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" modified="2026-03-28T00:00:00.000Z" agent="architecture-medikamente" version="22.0.0" type="device">
+  <diagram name="C2-Classification" id="c2-class">
+    <mxGraphModel dx="1300" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="C2 — Движок классификации и загрузка в DWH" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="520" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="src" value="Источники&#xa;Excel, 1С, CRM, Lab API, файлы" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="120" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ing" value="&lt;b&gt;Ingestion Service&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;batch / stream, валидация формата&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#438dd5;fontColor=#ffffff;strokeColor=#3c7fc0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="120" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="q" value="Очередь /&#xa;Kafka" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="310" y="230" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="Object&#xa;Storage&#xa;(staging)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="130" y="230" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="eng" value="&lt;b&gt;Classification Engine&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168bd;fontColor=#ffffff;strokeColor=#0b4884;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="100" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mod1" value="Анализ схемы&#xa;(имена, типы)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#67ab9f;fontColor=#ffffff;strokeColor=#4a8f84;" vertex="1" parent="1">
+          <mxGeometry x="500" y="160" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mod2" value="Анализ&#xa;содержимого&#xa;(regex / ML*)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#67ab9f;fontColor=#ffffff;strokeColor=#4a8f84;" vertex="1" parent="1">
+          <mxGeometry x="630" y="160" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mod3" value="Присвоение&#xa;тегов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#67ab9f;fontColor=#ffffff;strokeColor=#4a8f84;" vertex="1" parent="1">
+          <mxGeometry x="565" y="240" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="meta" value="&lt;b&gt;Metadata Store /&#xa;Data Catalog&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;теги, версии схем, lineage&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#999999;fontColor=#ffffff;strokeColor=#6b6b6b;" vertex="1" parent="1">
+          <mxGeometry x="800" y="120" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="load" value="&lt;b&gt;DWH Loader&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;raw → cleansed → …&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#438dd5;fontColor=#ffffff;strokeColor=#3c7fc0;" vertex="1" parent="1">
+          <mxGeometry x="800" y="240" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="dwh" value="DWH / Озеро&#xa;raw | cleansed |&#xa;anonymized | marts" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="150" width="120" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="plat" value="Медикаменте&#xa;Digital Platform&#xa;(OLTP)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="360" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="src" target="ing"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="ing" target="q"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="ing" target="s3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="q" target="mod1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="450" y="265" /><mxPoint x="450" y="190" /></Array></mxGeometry></mxCell>
+        <mxCell id="e5" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="s3" target="mod2"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="400" y="270" /><mxPoint x="400" y="190" /></Array></mxGeometry></mxCell>
+        <mxCell id="e6" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="mod1" target="mod3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="mod2" target="mod3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="mod3" target="meta"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="meta" target="load"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="880" y="210" /></Array></mxGeometry></mxCell>
+        <mxCell id="e10" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="load" target="dwh"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="1" source="plat" target="ing"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="200" y="395" /><mxPoint x="365" y="395" /><mxPoint x="365" y="190" /></Array></mxGeometry></mxCell>
+        <mxCell id="e11l" value="CDC / экспорт" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="e11"><mxGeometry x="-0.1" y="1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry></mxCell>
+        <mxCell id="note" value="* ML-модуль опционально на этапе зрелости" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="500" y="310" width="280" height="25" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
